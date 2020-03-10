@@ -1,24 +1,33 @@
-**React 打卡第一天**
+**React 打卡第二天**
 
-1. JSX 长的像 HTML, 但并非 HTML. 
+1. 项目中添加了 `TypeScript`
 
-2. 所谓 JSX 其实就是 JavaScript 对象
+```yaml
+# 在新项目中添加 TypeScript
+$ npx create-react-app my-app --typescript
+$ # 或者
+$ yarn create react-app my-app --typescript
 
-3. React-dom 负责把描述 UI 信息的 JS 对象渲染成 DOM 元素, 插入到页面中 
+# 在已有项目中添加 TypeScript
+$ npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+$ # 或者
+$ yarn add typescript @types/node @types/react @types/react-dom @types/jest
+```
 
-4. 第一次了解到 react-canvas 
+2.安装  source-map-explorer  分析包大小
 
-5. `{}` 内可以放任何 JavaScript 代码, 变量, 表达式, 函数等...
+在`package.json` 中, 添加到 `scripts` 中
 
-6. `on*` 事件建通只能用在普通的 `HTML` 标签上, 不能用在组件标签上
+```json
+"script": {
+  "analyze": "source-map-explorer build/static/js/main.*",
+  ...
+}
+```
 
-7. 事件监听函数内不能通过 `this` 获取实例. 需要手动绑定 `this`
+然后打包分析
 
-```jsx
-// bind 会把实例方法绑定到当前实例上
-
-<h1 onClick={this.handleClick.bind(this)}></h1>
-
-// 可以在绑定的时候传递一些参数进去
-<h1 onClick={this.handleClick.bind(this, 'Hello React')}></h1>
+```yaml
+$ npm run build
+$ npm run analyze
 ```
