@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
     render () {
+        const msg: string = 'This is footer'
         return (
-            <h5>This is Footer</h5>
+            <h5>{msg}</h5>
         )
     }
 }

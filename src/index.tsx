@@ -9,7 +9,8 @@ import Footer from './Footer'
 /**创建了名为 Header 的组件, 继承自 Component 类 */
 class Header extends Component {
     render () {
-        const word = 'is good'
+        // const word: string = 'is good'
+        const word: string = 'is Goooood'
         // const isGoodWord = true
         return (
             <div>

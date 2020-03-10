@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Title extends Component {
-    handleClickTitle(e) {
+    handleClickTitle(e: any) {
         console.log('Click on Title');
         console.log(e.target.innerHTML);
         console.log(this);
@@ -12,4 +12,4 @@ class Title extends Component {
         )
     }
 }
-export default Title
+export default Title 
