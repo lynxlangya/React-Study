@@ -8,13 +8,13 @@ import Footer from './Footer'
 
 /**创建了名为 Header 的组件, 继承自 Component 类 */
 class Header extends Component {
-    render () {
+    render() {
         // const word: string = 'is good'
-        const word: string = 'is Goooood'
+        const word = 'is Goooood'
         // const isGoodWord = true
         return (
             <div>
-                <h1 style={{'color': 'red'}}>
+                <h1 style={{ 'color': 'red' }}>
                     React 小书 {word}
                 </h1>
                 <Title />
@@ -23,6 +23,7 @@ class Header extends Component {
     }
 }
 
+
 class Index extends Component {
     render() {
         return (
@@ -30,6 +31,7 @@ class Index extends Component {
                 <Header />
                 <Main />
                 <Footer />
+                {/* <LikeButton /> */}
             </div>
         )
     }
