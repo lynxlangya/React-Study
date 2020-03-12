@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import 'antd/dist/antd.css'
 // import App from './App'
 import Title from './Title'
 import Main from './Main'
@@ -31,7 +32,6 @@ class Index extends Component {
                 <Header />
                 <Main />
                 <Footer />
-                {/* <LikeButton /> */}
             </div>
         )
     }

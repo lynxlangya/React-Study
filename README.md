@@ -1,35 +1,11 @@
-**React 打卡第三天**
-1. `setState` 方法, 接受一个对象或者函数作为参数, 以达到修改组件状态的效果
-2. `setState` 会将传入的状态缓存起来, 稍后才会更新到 `state` 上
+**React 打开第四天**
 
-```js
-handleClickOnLikeButton() {
-  console.log(this.state.isLiked);		// false
-  this.setState({
-    isLiked: !this.state.isLiked
-  })
-  console.log(this.state.isLiked); 		// false
-}
-```
-
-3.第二种方式更新 `state`
-
-```jsx
-...
-  handleClickOnLikeButton () {
-    this.setState((prevState) => {
-      return { count: 0 }
-    })
-    this.setState((prevState) => {
-      return { count: prevState.count + 1 } // 上一个 setState 的返回是 count 为 0，当前返回 1
-    })
-    this.setState((prevState) => {
-      return { count: prevState.count + 2 } // 上一个 setState 的返回是 count 为 1，当前返回 3
-    })
-    // 最后的结果是 this.state.count 为 3
-  }
-...
-```
-
-上面我们进行了三次 `setState`，但是实际上组件只会重新渲染一次，而不是三次；这是因为在 React.js 内部会把 JavaScript 事件循环中的消息队列的同一个消息中的 `setState` 都进行合并以后再重新渲染组件。
-
+1. 组件内部通过 `this.props` 获取配置参数 (同 vue)
+2. 组件可添加 `defaultProps` 来配置默认参数 (类似 vue default: null)
+3. `props` 一旦传入, 不可在组件内部修改, 但是可以通过父组件重新渲染的方式来传入新的 `props` 
+4. **`state` 的主要作用用于组件保存,控制,修改自己的状态 (同 `Vue` 中 `data`)**
+5. **`props`  的主要作用是接受父组件传递的参数, 内部无法修改**
+6. *`state` 是让组件控制自己的状态，`props` 是让外部对组件自己进行配置*
+7. **尽量少用`state`, 多用 `props`,  没有 `state` 的组件叫无状态组件, 有 `state` 的组件叫有状态组件 (叫法和flutter相同啊, 真可谓一法通则万法通)**
+8. 函数式组件编写方式是一个函数就是一个组件, 只能接受 `props` 而无法像类组件那样在 `constructor` 里面初始化 `state` 
+9. 数组循环 **唯一标识** **key   key   key**  千万别忘
