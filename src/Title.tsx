@@ -58,7 +58,6 @@ class LikeButton extends Component<any, any> {
 
     constructor(T: any) {
         super(T)
-        console.log(this.props);
         this.state = {
             isLiked: true
         }

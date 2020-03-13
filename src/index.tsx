@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import 'antd/dist/antd.css'
-// import App from './App'
+import App from './App'
 import Title from './Title'
 import Main from './Main'
 import Footer from './Footer'
@@ -25,6 +25,7 @@ class Header extends Component {
 }
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class Index extends Component {
     render() {
         return (
@@ -37,10 +38,8 @@ class Index extends Component {
     }
 }
 
-
-
 /**挂载到界面 */
 ReactDOM.render(
-    <Index />,
+    <App />,
     document.getElementById('root')
 )
