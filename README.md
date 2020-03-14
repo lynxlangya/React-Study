@@ -1,11 +1,13 @@
-**React 打开第四天**
+**React 打卡第六天**
 
-1. 组件内部通过 `this.props` 获取配置参数 (同 vue)
-2. 组件可添加 `defaultProps` 来配置默认参数 (类似 vue default: null)
-3. `props` 一旦传入, 不可在组件内部修改, 但是可以通过父组件重新渲染的方式来传入新的 `props` 
-4. **`state` 的主要作用用于组件保存,控制,修改自己的状态 (同 `Vue` 中 `data`)**
-5. **`props`  的主要作用是接受父组件传递的参数, 内部无法修改**
-6. *`state` 是让组件控制自己的状态，`props` 是让外部对组件自己进行配置*
-7. **尽量少用`state`, 多用 `props`,  没有 `state` 的组件叫无状态组件, 有 `state` 的组件叫有状态组件 (叫法和flutter相同啊, 真可谓一法通则万法通)**
-8. 函数式组件编写方式是一个函数就是一个组件, 只能接受 `props` 而无法像类组件那样在 `constructor` 里面初始化 `state` 
-9. 数组循环 **唯一标识** **key   key   key**  千万别忘
+1. `componentDidMount`:  组件挂载完成之后调用 (*DOM 元素已经插入到页面*)
+2. `componentWillUnmount`:  组件对应的 `DOM` 元素从页面中删除
+3. 定时器需要在组件销毁时清除
+4. 已废弃的生命周期钩子函数:
+   1. ~~`componentWillMount`~~
+   2. ~~`componentWillMount`~~
+   3. ~~`componentWillUpdate`~~
+5. React v16.3引入两个新的生命周期函数
+   1. **`getDerivedStateFromProps`**
+   2. **`getSnapshotBeforeUpdate`**
+

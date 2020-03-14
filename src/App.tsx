@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
 import CommentInput from './pages/CommentInput'
 import CommentList from './pages/CommentList'
-import { message } from "antd";
+import Cycle from './pages/Cycle'
+import { Button, message } from "antd";
 import './pages/index.css'
 
 class App extends Component<any, any> {
-    constructor (T: any) {
+    constructor(T: any) {
         console.log('初始化');
         super(T)
         this.state = {
-            comments: []
+            comments: [],
+            isShow: true
         }
     }
 
-    componentWillMount () {
-        console.log('WillMound');
-    }
-    componentDidMount () {
+    componentDidMount() {
         console.log('DidMound');
     }
     /**
@@ -34,6 +33,12 @@ class App extends Component<any, any> {
         })
     }
 
+    handleClick() {
+        this.setState({
+            isShow: !this.state.isShow
+        })
+    }
+
     render() {
         console.log('render');
         return (
@@ -42,6 +47,10 @@ class App extends Component<any, any> {
                     onSubmit={this.handleSubmit.bind(this)}
                 />
                 <CommentList comments={this.state.comments} />
+                <h1>
+                    {this.state.isShow ? <Cycle /> : null}
+                    <Button onClick={this.handleClick.bind(this)}>切换</Button>
+                </h1>
             </div>
         )
     }
