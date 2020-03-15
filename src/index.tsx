@@ -1,45 +1,28 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import 'antd/dist/antd.css'
-import App from './App'
-import Title from './Title'
-import Main from './Main'
-import Footer from './Footer'
+import PropTypes from 'prop-types'
 
+class Card extends Component<any, any> {
+    static propTypes = {
+        comment: PropTypes.array
+    }
 
-/**创建了名为 Header 的组件, 继承自 Component 类 */
-class Header extends Component {
     render() {
-        // const word: string = 'is good'
-        const word = 'is Goooood'
-        // const isGoodWord = true
+        const comment = this.props
+        console.log(comment);
         return (
             <div>
-                <h1 style={{ 'color': 'red' }}>
-                    React 小书 {word}
-                </h1>
-                <Title />
+                <div className="card-content">{comment.children}</div>
             </div>
         )
     }
 }
 
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-class Index extends Component {
-    render() {
-        return (
-            <div>
-                <Header />
-                <Main />
-                <Footer />
-            </div>
-        )
-    }
-}
-
-/**挂载到界面 */
 ReactDOM.render(
-    <App />,
+    <Card>
+        <h2>React.js 小书</h2>
+        <div>开源、免费、专业、简单</div>
+        订阅：<input />
+    </Card>,
     document.getElementById('root')
 )

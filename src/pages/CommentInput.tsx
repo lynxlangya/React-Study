@@ -6,6 +6,7 @@ import './index.css'
 const { TextArea } = Input
 
 class CommentInput extends Component<any, any> {
+    input: any;
     constructor(T: any) {
         super(T)
         this.state = {
@@ -41,6 +42,10 @@ class CommentInput extends Component<any, any> {
         this.props.onSubmit({ userName, content })
         this.setState({ content: null })
     }
+    
+    componentDidMount () {
+        this.input.focus()
+    }
 
     render() {
         return (
@@ -49,6 +54,7 @@ class CommentInput extends Component<any, any> {
                     <span className='comment-field-name'>用户名：</span>
                     <div>
                         <Input
+                            ref={(input) => this.input = input}
                             placeholder="请输入用户名"
                             value={this.state.userName}
                             maxLength={66}
