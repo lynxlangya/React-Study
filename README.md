@@ -1,13 +1,16 @@
-**React 打卡第六天**
+**React 打卡第八天**
 
-1. `componentDidMount`:  组件挂载完成之后调用 (*DOM 元素已经插入到页面*)
-2. `componentWillUnmount`:  组件对应的 `DOM` 元素从页面中删除
-3. 定时器需要在组件销毁时清除
-4. 已废弃的生命周期钩子函数:
-   1. ~~`componentWillMount`~~
-   2. ~~`componentWillMount`~~
-   3. ~~`componentWillUpdate`~~
-5. React v16.3引入两个新的生命周期函数
-   1. **`getDerivedStateFromProps`**
-   2. **`getSnapshotBeforeUpdate`**
+1. **组件私有方法都用 `_` 开头**    (通用)
+2. **事件监听方法都用 `handle` 开头**    (通用)
+3. **事件监听方法传给组件的时候, 用 `on` 开头**    (通用)
 
+**组件内容编写顺序 (参考): **
+
+1. `static` 开头的类属性, 如 `defaultProps`, `propTypes`
+2. 构造函数,  `constructor`
+3. getter / setter
+4. 组件生命周期
+5. `_` 开头私有方法
+6. `handle*` 事件监听方法
+7.  `render*`开头的方法，有时候 `render()` 方法里面的内容会分开到不同函数里面进行，这些函数都以 `render*` 开头。
+8. `render()` 方法
