@@ -30,7 +30,6 @@ class App extends Component<any, any> {
      */
     _loadComments() {
         let comments = localStorage.getItem('comments')
-        console.log(comments);
         if (comments) {
             comments = JSON.parse(comments)
             this.setState({ comments })
