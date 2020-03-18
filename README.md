@@ -1,16 +1,22 @@
-**React 打卡第八天**
+**React 打卡第 9 天**
 
-1. **组件私有方法都用 `_` 开头**    (通用)
-2. **事件监听方法都用 `handle` 开头**    (通用)
-3. **事件监听方法传给组件的时候, 用 `on` 开头**    (通用)
+1. **高阶组件就是一个函数, 传给它一个组件, 它返回一个新组件**
 
-**组件内容编写顺序 (参考): **
+```yaml
+const NewComponent = higherOrderComponent(OlcComponent)
+```
 
-1. `static` 开头的类属性, 如 `defaultProps`, `propTypes`
-2. 构造函数,  `constructor`
-3. getter / setter
-4. 组件生命周期
-5. `_` 开头私有方法
-6. `handle*` 事件监听方法
-7.  `render*`开头的方法，有时候 `render()` 方法里面的内容会分开到不同函数里面进行，这些函数都以 `render*` 开头。
-8. `render()` 方法
+2. 高阶组件: 它接受一个组件作为参数, 返回一个新组件. 这个新组件会使用传给它的组件作为子组件
+3. `React` 中布局必须在外层套一个`div`, 但是有时会影响布局样式, 所以我们可以引入 `Fragment`, 方式同 `Component` 引入一样. 将最外层的 `div` 换成 `Fragment` 即可
+4. 在 `constructor` 构造方法中绑定`this` 有利于性能优化
+
+```jsx
+...
+	constructor (props: any) {
+		super(props)
+  	this.handleClick = this.handleClick.bind(this)
+  }
+...
+```
+
+5. 高阶组件又利用代码复用, 可以把组件之间可复用的代码, 逻辑抽离到高阶组件中. 新的组件和传入的组件通过 `props` 传递信息
